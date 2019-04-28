@@ -1,4 +1,3 @@
-/*
 package com.example.demo.controller;
 
 import org.aspectj.lang.JoinPoint;
@@ -21,20 +20,14 @@ public class WebLogAcpect {
 
     private Logger logger = LoggerFactory.getLogger(WebLogAcpect.class);
 
-    */
-/**
-     * 定义切入点，切入点为com.example.demo 下的所有函数
-     *//*
-
+    // 定义切入点，切入点为com.example.demo 下的所有函数
     @Pointcut("execution(public * com.example.demo..*.*(..))")
     public void webLog(){}
 
-    */
-/**
-     * 前置通知：在连接点之前执行的通知
+/**     * 前置通知：在连接点之前执行的通知
      * @param joinPoint
      * @throws Throwable
-     *//*
+     */
 
     @Before("webLog()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
@@ -57,4 +50,3 @@ public class WebLogAcpect {
         logger.info("RESPONSE : " + ret);
     }
 }
-*/
