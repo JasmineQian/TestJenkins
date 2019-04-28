@@ -22,9 +22,10 @@ public class WebLogAcpect {
 
     // 定义切入点，切入点为com.example.demo 下的所有函数
     @Pointcut("execution(public * com.example.demo..*.*(..))")
-    public void webLog(){}
+    public void webLog() {
+    }
 
-/**     * 前置通知：在连接点之前执行的通知
+    /* 前置通知：在连接点之前执行的通知
      * @param joinPoint
      * @throws Throwable
      */
@@ -44,7 +45,7 @@ public class WebLogAcpect {
         logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
     }
 
-    @AfterReturning(returning = "ret",pointcut = "webLog()")
+    @AfterReturning(returning = "ret", pointcut = "webLog()")
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
         logger.info("RESPONSE : " + ret);

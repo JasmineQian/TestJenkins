@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
-import java.util.logging.SimpleFormatter;
+
 
 @RestController
 @RequestMapping
@@ -16,6 +16,8 @@ public class AOPController {
     @ResponseBody
     public String sayHello(){
         SimpleDateFormat simpleFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssSSS");
-        return "hello Jasmine, this time is " + simpleFormatter.format(System.currentTimeMillis());
+        return "To do Lists: \n" +
+                "1.Jenkins 持续集成 \n" +
+                "hello Jasmine, this time is " + simpleFormatter.format(System.currentTimeMillis());
     }
 }
